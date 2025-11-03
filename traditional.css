@@ -1,0 +1,248 @@
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  color: #333;
+}
+
+/* Download Tooltip */
+.download-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.file-info {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.download-wrapper:hover .file-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Button Styles */
+button {
+  background: linear-gradient(45deg, #28a745, #218838);
+  border: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  min-width: 48px;
+  min-height: 48px;
+  margin: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #218838, #28a745);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: inherit;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+/* Responsive Button Adjustments */
+@media screen and (max-width: 768px) {
+  button {
+    width: 100%;
+    font-size: 18px;
+    padding: 14px 20px;
+  }
+}
+
+/* Navbar Styles */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(44, 62, 80, 0.9);
+  padding: 10px 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+summary:hover {
+  cursor: pointer;
+}
+
+#logo img {
+  height: 56px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#logo img:hover {
+  transform: scale(1.1);
+}
+
+.search-container {
+  flex-grow: 2;
+  text-align: center;
+}
+
+#searchInput {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  width: 80%;
+}
+
+/* Navigation Links */
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  color: #3498db;
+}
+
+/* Section Styles */
+section {
+  padding: 20px;
+  background: white;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+/* List Styles */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li.item {
+  margin: 0 10px;
+}
+
+.section li {
+  margin-bottom: 20px;
+}
+
+/* Share Button Styles */
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.share-btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.share-btn.whatsapp {
+  background-color: #25D366;
+}
+
+.share-btn:hover {
+  opacity: 0.8;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #282c34;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+  color: #ff6f61;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-container {
+    margin: 10px 0;
+  }
+
+  #logo {
+    margin: 10px 0;
+  }
+
+  li.item {
+    margin: 5px 0;
+  }
+}
+
+/* Particles Background */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
